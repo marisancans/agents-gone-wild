@@ -4486,7 +4486,7 @@ window.LG_SCAN={n:14000,w:780,h:765,b64:'FZ3hqAdb1V9gcXmbIzxHNYV++Xr+6N7m1vMJh7k
     cFImpact(g, b, o) {
       const C = [120, 900, 1210, 1500, 1800], f0 = v => (v < 0 ? '−' : '') + Math.abs(Math.round(v)).toLocaleString('en-US'), f1 = v => (v >= 10 ? Math.round(v) : v.toFixed(1)).toString(), nm = s2 => s2.replace(/-client$/, '');
       const head = G(g, { opacity: 0 });
-      [['service', 0, 'start'], ['jobs a day', 1, 'end'], ['s per job', 2, 'end'], ['RAM per job, MB', 3, 'end'], ['container-h freed', 4, 'end']].forEach(([s2, i, an]) => T(head, C[i], 420, s2, { fill: SOFT, 'font-size': 36, 'text-anchor': an }));
+      [['service', 0, 'start'], ['avg jobs a day', 1, 'end'], ['s per job', 2, 'end'], ['RAM per job, MB', 3, 'end'], ['container-h freed', 4, 'end']].forEach(([s2, i, an]) => T(head, C[i], 420, s2, { fill: SOFT, 'font-size': 36, 'text-anchor': an }));
       el(head, 'line', { x1: 120, x2: 1800, y1: 436, y2: 436, stroke: GRID, 'stroke-width': 2 });
       const row = (y, cells, col) => { const q = G(g, { opacity: 0 });
         cells.forEach(([s2, i, c, w]) => T(q, C[i], y, s2, { 'font-size': 36, 'text-anchor': i ? 'end' : 'start', fill: c || FG, 'font-weight': w || 400 })); return q; };
