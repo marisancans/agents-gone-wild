@@ -704,12 +704,19 @@ svg.chart [data-mk="rise"]{transform-origin:center bottom}
     [data-id="342-shadow-real"] .h2{top:4.9cqw;font-size:2.5cqw;line-height:1.1;max-width:none;white-space:nowrap}
   </style>
 </section>
-<section class="slide" data-group="g5" data-part="5 · ACO" data-id="343-next-batch">
+<section class="slide" data-group="g5" data-part="5 · ACO" data-id="343-impact">
   <script type="application/json" class="f">[{swarm:{type:'hidden'}}]</script>
-  <div class="kick">5 · ACO · next batch</div>
-  <h2 class="h2 w" style="font-size:3.3333cqw;max-width:none">The next 14 in shadow: less RAM in Rust, all but one.</h2>
-  <svg class="chart" data-chart="cFBatch" data-box=".062,.37,.876,.5" data-opt='{"rows": [["bag-validation", 5072, 2152, 1], ["panorama-frame-blurring", 2611, 1229, 0], ["lidar-correction", 1152, 922, 0], ["still-frame-blurring", 845, 461, 0], ["video-stitcher", 738, 564, 1], ["pillar-detection", 691, 346, 0], ["sloped-ceiling-pillars", 653, 230, 0], ["furniture-detection", 486, 358, 0], ["final-point-cloud", 370, 92, 1], ["point-cloud-painter", 340, 195, 0], ["fp-virtual-staging", 323, 190, 0], ["panorama-poi", 307, 83, 1], ["capture-report", 210, 455, 0], ["outdoor-scan-positions", 105, 98, 0]]}'></svg>
-  <p class="src">Batch 3 shadow watch · k8s grants</p>
+  <div class="kick">5 · ACO · impact 1/2</div>
+  <h2 class="h2 w" style="font-size:3.3333cqw;max-width:none">All 29 on Rust: 663 container-hours and 3,717 GiB-hours of RAM freed a day.</h2>
+  <svg class="chart" data-chart="cFImpact" data-box=".062,.36,.876,.52" data-opt='{"top": [["control-point-generator", 11622, 182.2, 29.01, 6300, 1235, 494.6, 3505.8], ["straighten-json-generator", 11595, 6.51, 0.81, 577, 60, 18.4, 11.7], ["still-metadata-json-generator", 20232, 3.32, 0.63, 96, 10, 15.1, 1.7], ["bag-validation-and-calibration", 1190, 92.35, 49.27, 3412, 3552, 14.2, 45.2], ["kitchen-unit-detection-client", 11578, 4.46, 0.81, 799, 325, 11.7, 10.4], ["still-blur-mask-generator", 20177, 3.06, 1.03, 307, 102, 11.4, 4.6], ["tv-replacement", 20187, 3.38, 1.38, 358, 146, 11.2, 5.5], ["still-final-generator", 20220, 4.47, 2.56, 333, 341, 10.7, 3.4], ["still-classification-client", 20123, 2.45, 0.63, 205, 58, 10.2, 2.5]]}'></svg>
+  <p class="src">job scheduler · 14 days each side</p>
+</section>
+<section class="slide" data-group="g5" data-part="5 · ACO" data-id="344-impact-2">
+  <script type="application/json" class="f">[{swarm:{type:'hidden'}}]</script>
+  <div class="kick">5 · ACO · impact 2/2</div>
+  <h2 class="h2 w" style="font-size:3.3333cqw;max-width:none">The long tail: small jobs, a few seconds faster, many times a day.</h2>
+  <svg class="chart" data-chart="cFImpact" data-box=".062,.36,.876,.52" data-opt='{"top": [["still-window-segmentation", 20115, 2.67, 0.84, 205, 86, 10.2, 2.6], ["distance-extractor", 11872, 7.63, 5.15, 864, 389, 8.2, 14.8], ["tripod-point-cloud-filtration", 11852, 8.52, 6.06, 225, 78, 8.1, 4.7], ["geolocation-gps", 960, 28.44, 3.39, 681, 121, 6.7, 4.9], ["panorama-blur-mask-generator", 11569, 3.58, 1.65, 616, 154, 6.2, 6.1], ["panorama-metadata-json-generator", 11570, 2.55, 0.62, 115, 16, 6.2, 0.9], ["point-cloud-filtration-using-masks", 12695, 2.74, 1.02, 211, 127, 6.1, 1.5], ["panorama-license-plate-detection-client", 11572, 4.02, 2.2, 2613, 922, 5.9, 26.6]], "rest": [11, 24, 28], "slow": [["still-license-plate-detection-client", 20216, 5.52, 8.36, 1997, 536, -15.9, 35.9]]}'></svg>
+  <p class="src">job scheduler · 14 days each side</p>
 </section>
 <section class="slide" data-group="g5" data-part="5 · ACO" data-id="355-same">
   <script type="application/json" class="f">[{swarm:{type:'hidden'}}]</script>
@@ -4471,6 +4478,24 @@ window.LG_SCAN={n:14000,w:780,h:765,b64:'FZ3hqAdb1V9gcXmbIzxHNYV++Xr+6N7m1vMJh7k
         if (u < 3.0) { const f = u / 3.0, x = BX(0) + BW / 2 + f * (BX(4) - BX(0)); put(run, x, yy, 1); at(run, 'fill', f > .74 ? (ok ? TEAL : RED) : VIO); }
         else if (!ok) { const q = path.getPointAtLength(PL * io(seg(u, 3.0, 1.1))); put(run, q.x, q.y, 1); at(run, 'fill', RED); }
         else { put(run, BX(4) + BW / 2, yy, 1 - seg(u, 3.0, .6)); at(run, 'fill', TEAL); } });
+    },
+
+    // ================= 343 · all 29 on Rust, by impact (six_months.json services: Python's last 14 days vs Rust's last 14) =================
+    // data-opt {top:[[service, jobs/day, py s/job, rs s/job, py MB, rs MB, container-h/day freed, GiB-h/day freed]],
+    // rest:[n, h, GiBh], slow:[rows], total:[n, h, GiBh]}. RAM = k8s grant per job; freed = (py − rust) × today's volume.
+    cFImpact(g, b, o) {
+      const C = [120, 900, 1210, 1500, 1800], f0 = v => (v < 0 ? '−' : '') + Math.abs(Math.round(v)).toLocaleString('en-US'), f1 = v => (v >= 10 ? Math.round(v) : v.toFixed(1)).toString(), nm = s2 => s2.replace(/-client$/, '');
+      const head = G(g, { opacity: 0 });
+      [['service', 0, 'start'], ['jobs a day', 1, 'end'], ['s per job', 2, 'end'], ['RAM per job, MB', 3, 'end'], ['container-h freed', 4, 'end']].forEach(([s2, i, an]) => T(head, C[i], 420, s2, { fill: SOFT, 'font-size': 36, 'text-anchor': an }));
+      el(head, 'line', { x1: 120, x2: 1800, y1: 436, y2: 436, stroke: GRID, 'stroke-width': 2 });
+      const row = (y, cells, col) => { const q = G(g, { opacity: 0 });
+        cells.forEach(([s2, i, c, w]) => T(q, C[i], y, s2, { 'font-size': 36, 'text-anchor': i ? 'end' : 'start', fill: c || FG, 'font-weight': w || 400 })); return q; };
+      const pair = (a, b2, c) => { return null; };
+      const R = o.top.map((r, k) => row(486 + k * 48, [[nm(r[0]), 0], [f0(r[1]), 1, SOFT], [`${f1(r[2])} → ${f1(r[3])}`, 2], [`${f0(r[4])} → ${f0(r[5])}`, 3], [f0(r[6]), 4, TEAL, 600]]));
+      const yr = 486 + o.top.length * 48 + 6;
+      if (o.rest) R.push(row(yr, [[`${o.rest[0]} more services, together`, 0, SOFT], [f0(o.rest[1]), 4, TEAL, 600]]));
+      (o.slow || []).forEach((r, k) => R.push(row(yr + (o.rest ? 52 : 0) + k * 48, [[nm(r[0]) + ': slower, lighter', 0, RED], [`${f1(r[2])} → ${f1(r[3])}`, 2, RED], [`${f0(r[4])} → ${f0(r[5])}`, 3], [f0(r[6]), 4, RED, 600]])));
+      M.scene(g, S => { const t = S.at(0); fade(head, t, .1); R.forEach((q, i) => fade(q, t, .3 + i * .1, .3)); });
     },
   });
 })();
