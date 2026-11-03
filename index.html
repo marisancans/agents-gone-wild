@@ -763,7 +763,7 @@ svg.chart [data-mk="rise"]{transform-origin:center bottom}
 <section class="slide" data-group="g5" data-part="5 · ACO" data-id="400-all27">
   <script type="application/json" class="f">[{swarm:{type:'hidden'}}]</script>
   <div class="kick">5 · ACO · production</div>
-  <h2 class="h2 w">27 services: lighter and faster.</h2>
+  <h2 class="h2 w">The first 27 on Rust: lighter and faster.</h2>
   <svg class="chart" data-chart="cCAll27" data-box=".062,.31,.876,.57" ></svg>
   <p class="src">registry image sizes · service configs · our job scheduler</p>
 </section>
@@ -3371,7 +3371,7 @@ window.LG_SCAN={n:14000,w:780,h:765,b64:'FZ3hqAdb1V9gcXmbIzxHNYV++Xr+6N7m1vMJh7k
       const x0 = 280, x1 = 1240, top = 572, bot = 840, n = 7, step = (x1 - x0) / n, cx = i => x0 + step * (i + .5);
       const Y = v => bot - v / 50 * (bot - top), YC = v => bot - v / 10 * (bot - top), bw = 64;
       // headline numbers
-      rich(g, 120, 448, [['31', TEAL, { 'font-family': DISP, 'font-size': 64, 'font-weight': 600 }], [' services on Rust, 4 of them this week  ·  ', FG], ['~2M', TEAL, { 'font-family': DISP, 'font-size': 64, 'font-weight': 600 }], [' Rust jobs a week', FG]]);
+      rich(g, 120, 448, [['27', TEAL, { 'font-family': DISP, 'font-size': 64, 'font-weight': 600 }], [' live on Rust in these weeks, ', FG], ['+4', TEAL, { 'font-family': DISP, 'font-size': 64, 'font-weight': 600 }], [' this week  ·  ~2M Rust jobs a week', FG]]);
       // the five weeks: a band behind weeks 1–5, with a bracket and its label above the plot
       const bx0 = x0 + 4, bx1 = x0 + 5 * step, brk = G(g, { opacity: 0 });
       el(brk, 'rect', { x: bx0, y: top, width: bx1 - bx0, height: bot - top, fill: TEAL, 'fill-opacity': .05 });
@@ -3472,7 +3472,7 @@ window.LG_SCAN={n:14000,w:780,h:765,b64:'FZ3hqAdb1V9gcXmbIzxHNYV++Xr+6N7m1vMJh7k
       // ---- the real total: container-hours a day of the 27 services ----
       el(g, 'line', { x1: 120, x2: 1800, y1: 770, y2: 770, stroke: GRID, 'stroke-width': 2 });
       T(g, 120, 812, 'container-hours a day', { 'font-weight': 600 });
-      T(g, 120, 866, 'of the 27 services', { fill: SOFT }); T(g, 120, 920, 'now live on Rust', { fill: SOFT });
+      T(g, 120, 866, 'of the first 27', { fill: SOFT }); T(g, 120, 920, 'services on Rust', { fill: SOFT });
       const HX = PX0, k = 820 / 941, hP = el(g, 'rect', { x: HX, y: 790, width: 0, height: BH, fill: PY }), hR = el(g, 'rect', { x: HX, y: 856, width: 0, height: BH, fill: PY, opacity: 0 });
       const lP = T(g, HX + 14, 790 + 38, '941 Python', { 'font-size': 48, 'font-weight': 600, fill: BG, opacity: 0 });
       const lR = T(g, HX + 279 * k + 14, 856 + 38, '279 Rust', { 'font-size': 48, 'font-weight': 600, fill: TEAL, opacity: 0 });
